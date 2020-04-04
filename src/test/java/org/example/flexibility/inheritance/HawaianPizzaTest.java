@@ -46,10 +46,33 @@ class HawaianPizzaTest extends BaseTest {
     }
 
     @Test
-    void prepareDough() {
+    void prepareDough_WhenPizzaDoughIsRequired_PrintsMessageCorrectly() {
+        //Arrange
+        StringBuilder expectedOutput = new StringBuilder();
+        expectedOutput.append("Preparing dough");
+        expectedOutput.append(System.lineSeparator());
+        HawaianPizza pizza = new HawaianPizza();
+
+        // Act
+        pizza.prepareDough();
+
+        // Assert
+        Assertions.assertEquals(expectedOutput.toString(), getOutput());
+
     }
 
     @Test
-    void bake() {
+    void bake_WhenBakingPizzaIsRequired_PrintsMessageCorrectly() {
+        //Arrange
+        StringBuilder expectedOutput = new StringBuilder();
+        expectedOutput.append("Baking pizza");
+        expectedOutput.append(System.lineSeparator());
+        HawaianPizza pizza = new HawaianPizza();
+        // Act
+        pizza.bake();
+
+        // Assert
+        Assertions.assertEquals(expectedOutput.toString(), getOutput());
+
     }
 }
